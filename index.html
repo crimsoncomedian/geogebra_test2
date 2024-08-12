@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoGebra Web Applet</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d7f4ff;
+        }
+        #ggb-element {
+            width: 100%;
+            height: 100%;
+            max-width: 1200px;
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="ggb-element"></div>
+    <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+    <script src="geogebra_javascript.js"></script>
+    <script>
+        var applet = new GGBApplet({
+            "filename": "geogebra.xml",
+            "showToolbar": false,
+            "showAlgebraInput": false,
+            "showMenuBar": false,
+            "enableLabelDrags": false,
+            "enableRightClick": false,
+            "enableShiftDragZoom": false,
+            "capturingThreshold": null,
+            "showResetIcon": true,
+            "autoHeight": true,
+            "useBrowserForJS": true
+        }, true);
+        window.addEventListener("load", function() {
+            applet.inject('ggb-element');
+        });
+    </script>
+</body>
+</html>
